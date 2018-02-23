@@ -15,24 +15,26 @@
   <!-- This "navbar-menu" is hidden on mobile -->
   <!-- Add the modifier "is-active" to display it on mobile -->
   <div class="navbar-menu"  [ngClass]="{'is-active': show}">
-    
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <!-- navbar items -->
+      </div>
+
+      <div class="navbar-end">
+        <a class="nav-item" routerLink="/login">
+          Login
+        </a>
+        <a class="nav-item" routerLink="/notes">
+          Firestore
+        </a>
+        <a class="nav-item" routerLink="/items">
+          Realtime DB
+        </a>
+        <a class="nav-item" routerLink="/uploads">
+          File Uploads
+        </a>
+      </div>
+    </div>
   </div>
 
-
-  
-  
-  <div class="nav-right nav-menu">
-    <a class="nav-item" routerLink="/login">
-      Login
-    </a>
-    <a class="nav-item" routerLink="/notes">
-      Firestore
-    </a>
-    <a class="nav-item" routerLink="/items">
-      Realtime DB
-    </a>
-    <a class="nav-item" routerLink="/uploads">
-      File Uploads
-    </a>
-  </div>
 </nav>
