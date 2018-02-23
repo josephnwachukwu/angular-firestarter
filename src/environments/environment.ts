@@ -1,11 +1,11 @@
 export const environment = {
     production: false,
     firebaseConfig: {
-        apiKey: 'APIKEY',
-        authDomain: 'DEV-APP.firebaseapp.com',
-        databaseURL: 'https://DEV-APP.firebaseio.com',
-        projectId: 'DEV-APP',
-        storageBucket: 'DEV-APP.appspot.com',
-        messagingSenderId: '123456789'
+        apiKey: "AIzaSyA0mh8xWZUbRkSjZnTS4mmWifl2WAYxZ3A",
+        authDomain: "matchstick-46c7a.firebaseapp.com",
+        databaseURL: "https://matchstick-46c7a.firebaseio.com",
+        projectId: "matchstick-46c7a",
+        storageBucket: "matchstick-46c7a.appspot.com",
+        messagingSenderId: "913658066405"
     }
 };
