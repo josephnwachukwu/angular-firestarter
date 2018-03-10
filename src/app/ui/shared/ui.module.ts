@@ -6,15 +6,23 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from '../../shared/shared.module';
 
-import { NavService } from './nav.service';
+// import Theme Module
+import { ThemeModule } from '../../theme/theme.module';
+
+//import { NavService } from './nav.service';
 
 import { UserLoginComponent } from '../user-login/user-login.component';
 import { UserProfileComponent } from '../user-profile/user-profile.component';
 import { UserFormComponent } from '../user-form/user-form.component';
-import { TopNavComponent } from '../top-nav/top-nav.component';
-import { FooterNavComponent } from '../footer-nav/footer-nav.component';
-import { ReadmePageComponent } from '../readme-page/readme-page.component';
+
+// TODO: Theme Module
+// import { HeaderComponent } from '../../theme/header/header.component';
+// import { FooterComponent } from '../../theme/footer/footer.component';
+
 import { NotificationMessageComponent } from '../notification-message/notification-message.component';
+
+// Pages
+import { HomeComponent } from '../../pages/home/home.component';
 
 @NgModule({
   imports: [
@@ -28,15 +36,15 @@ import { NotificationMessageComponent } from '../notification-message/notificati
   declarations: [
     UserLoginComponent,
     UserProfileComponent,
-    TopNavComponent,
-    FooterNavComponent,
+    //HeaderComponent,
+    //FooterComponent,
     UserFormComponent,
-    ReadmePageComponent,
+    HomeComponent,
     NotificationMessageComponent,
   ],
   exports: [
-    TopNavComponent,
-    FooterNavComponent,
+    //HeaderComponent,
+    //FooterComponent,
     UserProfileComponent,
     NotificationMessageComponent,
   ],

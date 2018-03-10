@@ -24,60 +24,11 @@ a {
   }
 }
 
-#wrapper {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.content {
-    // min-height: 70vh;
-    padding: 2vw;
-    flex: 1
-}
-
-.videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  padding-top: 25px;
-  height: 0;
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.logo {
-  font-size: 1.2em;
-  font-weight: bold;
-  font-family: $heading-font;
-  color: #1D262F;
-  img { 
-    margin-right: 5px;
-  }
-}
-  
-.footer {
-  border-top: 2px solid $gray-lightest;
-  min-height: 100px;
-  text-align: center;
-  font-size: 0.9em;
-  background: #f9f9f9;
-}
-
 
 .text-truncate {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.box {
-  border-radius: 0px;
-  margin-top: 5px;
 }
 
 

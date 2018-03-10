@@ -13,4 +13,4 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
   ],
   providers: [AuthService, NotifyService],
 })
-export class CoreModule { }
+export class AuthModule { }
