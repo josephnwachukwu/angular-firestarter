@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../../../auth/auth.service';
-
+import { AppConfigService } from '../../../app.config';
 type UserFields = 'email' | 'password';
 type FormErrors = { [u in UserFields]: string };
 
@@ -33,7 +34,7 @@ export class RegisterFormComponent implements OnInit {
     },
   };
 
-  constructor(private fb: FormBuilder, private auth: AuthService) { }
+  constructor(private fb: FormBuilder, private auth: AuthService,  public appConfig: AppConfigService, private router: Router) { }
 
   ngOnInit() {
     this.buildForm();
@@ -54,6 +55,42 @@ export class RegisterFormComponent implements OnInit {
   resetPassword() {
     this.auth.resetPassword(this.userForm.value['email'])
       .then(() => this.passReset = true);
+  }
+
+    /// Social Login
+
+  signInWithGithub() {
+    this.auth.githubLogin()
+    .then(() => this.afterSignIn());
+  }
+
+  signInWithGoogle() {
+    this.auth.googleLogin()
+      .then(() => this.afterSignIn());
+  }
+
+  signInWithFacebook() {
+    this.auth.facebookLogin()
+      .then(() => this.afterSignIn());
+  }
+
+  signInWithTwitter() {
+    this.auth.twitterLogin()
+      .then(() => this.afterSignIn());
+  }
+
+  /// Anonymous Sign In
+
+  signInAnonymously() {
+    this.auth.anonymousLogin()
+      .then(() => this.afterSignIn());
+  }
+
+  /// Shared
+
+  private afterSignIn() {
+    // Do after login stuff here, such router redirects, toast messages, etc.
+    this.router.navigate(['/']);
   }
 
   buildForm() {
