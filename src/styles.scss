@@ -1,2 +1,13 @@
 @import "./styles/loading.scss";
 @import "./styles/matchstick.scss";
+@import "./app/theme/styles/style.scss";
+
+// Modifiers
+
+.centered {
+	text-align: center;
+}
+
+.block {
+	width:100%;
+}

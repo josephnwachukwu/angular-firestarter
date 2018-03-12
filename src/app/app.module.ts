@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { AppConfigService } from './app.config';
 
 // Auth
 import { AuthModule } from './auth/auth.module';
@@ -47,5 +47,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
   bootstrap: [
     AppComponent,
   ],
+  providers: [
+    AppConfigService,
+  ]
 })
 export class AppModule { }
