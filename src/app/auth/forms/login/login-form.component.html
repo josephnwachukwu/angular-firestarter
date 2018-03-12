@@ -1,0 +1,91 @@
+<form [formGroup]="userForm"  *ngIf="newUser"  (ngSubmit)="login()">
+  <div class="box">
+    <h4 class="title is-4">Login</h4>
+    <hr />
+    <div class="field">
+      <label class="label" for="email">Email</label>
+      <div class="control has-icons-left">
+        <input type="email" id="email" class="input is-medium" placeholder="Email" formControlName="email" required>
+        <span class="icon is-medium is-left">
+          <i class="fa fa-envelope"></i>
+        </span>
+        <div *ngIf="formErrors.email" class="notification is-danger">
+          {{ formErrors.email }}
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label" for="password">Password</label>
+      <div class="control  has-icons-left">
+        <input type="password" id="password" class="input is-medium" placeholder="Password" formControlName="password" required >
+        <span class="icon is-medium is-left">
+          <i class="fa fa-lock"></i>
+        </span>
+        <div *ngIf="formErrors.password" class="notification is-danger">
+          {{ formErrors.password }}
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="userForm.valid" class="notification is-success">Form is valid</div>
+    <button type="submit" class="button  is-medium" [disabled]="!userForm.valid">Login</button>
+    <p>New User? <a routerLink="/register">Click Here</a></p>
+    <hr>
+    <h6 class="title is-6">Connect With Your Social Network</h6>
+    <div class="columns">
+      <div class="column is-6">
+        <button (click)="signInWithGoogle()" class="button btn-social btn-google">
+          <i class="fa fa-google fa-lg"></i>Login Google
+        </button>
+      </div>
+      <div class="column is-6">
+        <button (click)="signInWithFacebook()" class="button  btn-social btn-facebook" disabled>
+          <i class="fa fa-facebook fa-lg"></i>Login Facebook
+        </button>
+      </div>
+    </div>
+
+    <h6 class="title is-6">Anonymous Login</h6>
+
+    <button (click)="signInAnonymously()" class="button button-info">
+      <i class="fa fa-user-secret fa-lg"></i> Connect Anonymously
+    </button>
+  </div>
+  
+
+  
+
+</form>
+
+
+<form [formGroup]="userForm"  *ngIf="!newUser"  (ngSubmit)="signUp()">
+
+  <h3>Existing User Login</h3>
+  <p class="btn button is-small" (click)="toggleForm()">New User?</p>
+  <hr>
+
+  <label for="email">Email</label>
+  <input type="email" id="email" class="input"
+         formControlName="email" required >
+
+  <div *ngIf="formErrors.email" class="help is-danger">
+    {{ formErrors.email }}
+  </div>
+
+  <label for="password">Password</label>
+  <input type="password" id="password" class="input"
+         formControlName="password" required >
+
+  <div *ngIf="formErrors.password" class="help is-danger">
+    {{ formErrors.password }}
+  </div>
+
+  <button type="submit" class="button" [disabled]="!userForm.valid">Submit</button>
+
+  <span *ngIf="userForm.valid" class="help is-success">Form Looks Valid</span>
+
+  <a *ngIf="!passReset && userForm.controls.email.valid" class="help is-info" (click)="resetPassword()">Reset Password for {{userForm.value.email}}?</a>
+  <p *ngIf="passReset" class="help is-info">Reset requested. Check your email instructions.</p>
+
+</form>

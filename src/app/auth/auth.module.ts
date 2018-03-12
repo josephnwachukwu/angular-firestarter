@@ -15,7 +15,8 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotificationMessageComponent } from './shared/notifications/notification-message/notification-message.component';
-import { UserFormComponent } from './forms/user-form.component';
+import { LoginFormComponent } from './forms/login/login-form.component';
+import { RegisterFormComponent } from './forms/register/register-form.component';
 
 import { AuthRoutingModule } from './auth.routes';
 
@@ -35,14 +36,16 @@ import { AuthRoutingModule } from './auth.routes';
   	LoginComponent,
     ProfileComponent,
     NotificationMessageComponent,
-    UserFormComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
   ],
   exports: [
   	RegisterComponent,
   	LoginComponent,
     ProfileComponent,
     NotificationMessageComponent,
-    UserFormComponent,
+    LoginFormComponent,
+    RegisterFormComponent,
   ]
 })
 export class AuthModule { }
