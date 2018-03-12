@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { NotifyService } from '../../auth/notify.service';
+import { NotifyService } from '../notify.service';
 
 @Component({
   selector: 'notification-message',
