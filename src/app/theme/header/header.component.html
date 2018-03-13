@@ -1,10 +1,10 @@
 <nav class="navbar">
   
   <div class="navbar-brand">
-    <a class="navbar-item">Matchstick</a>
+    <a class="navbar-item" routerLink="/">{{appConfig.config.appName}}</a>
     
     <!-- This "navbar-burger" hamburger menu is only visible on mobile -->
-    <div class="navbar-burger">
+    <div class="navbar-burger" data-target="navMenu">
       <span></span>
       <span></span>
       <span></span>
@@ -14,27 +14,28 @@
   
   <!-- This "navbar-menu" is hidden on mobile -->
   <!-- Add the modifier "is-active" to display it on mobile -->
-  <div class="navbar-menu"  [ngClass]="{'is-active': show}">
-    <div class="navbar-menu">
-      <div class="navbar-start">
+  <div class="navbar-menu"  [ngClass]="{'is-active': show}" id="navMenu">
+     <div class="navbar-start">
         <!-- navbar items -->
       </div>
 
       <div class="navbar-end">
-        <a class="nav-item" routerLink="/login">
+        <a class="navbar-item" routerLink="/login">
           Login
         </a>
-        <a class="nav-item" routerLink="/notes">
+        <a class="navbar-item" routerLink="/notes">
           Firestore
         </a>
-        <a class="nav-item" routerLink="/items">
+        <a class="navbar-item" routerLink="/items">
           Realtime DB
         </a>
-        <a class="nav-item" routerLink="/uploads">
+        <a class="navbar-item" routerLink="/theme">
+          Style Guide
+        </a>
+        <a class="navbar-item" routerLink="/uploads">
           File Uploads
         </a>
       </div>
-    </div>
   </div>
 
 </nav>

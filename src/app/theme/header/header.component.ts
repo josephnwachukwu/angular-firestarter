@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AppConfigService } from '../../app.config';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'header',
@@ -9,7 +11,9 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   show = false;
+  constructor(public auth: AuthService, public appConfig: AppConfigService) {
 
+  }
   toggleCollapse() {
     this.show = !this.show;
   }

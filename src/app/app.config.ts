@@ -5,6 +5,10 @@ export class AppConfigService {
 
 	// App Settings
 	config = {
+		// App Name
+		appName: 'MatchStick',
+		// App Description
+		appDescription: 'A Progressive Fully Functional Mobile Respnsive Web App BoilerPlate for you to start developing with angular and firebase.',
 		authSettings: {
 			anonymousLogin: false,
 			socialLogin: true,

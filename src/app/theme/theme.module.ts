@@ -10,6 +10,9 @@ import { SharedModule } from '../shared/shared.module';
 // Components
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { StyleGuideComponent } from './style-guide/style-guide.component';
+// Routes
+import { ThemeRoutingModule } from './theme.routes'
 
 @NgModule({
   imports: [
@@ -19,14 +22,17 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     RouterModule,
     BrowserAnimationsModule,
+    ThemeRoutingModule,
   ],
   declarations: [
     HeaderComponent,
     FooterComponent,
+    StyleGuideComponent,
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
+    StyleGuideComponent,
   ],
 })
 

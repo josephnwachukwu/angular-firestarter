@@ -1,0 +1,19 @@
+@import '../styles/style.scss';
+
+
+#style-guide {
+	background-color: #F1F1F1;
+}
+
+.swatch{
+	height: 100px;
+	width: 100%;
+}
+
+.violet {
+	background-color: $violet;
+}
+
+.aqua-green {
+	background-color: $aqua-green;
+}
