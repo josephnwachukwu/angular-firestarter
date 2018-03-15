@@ -15,7 +15,7 @@ export class AppConfigService {
 			gitHubLogin: false,
 			googleLogin: true,
 			facebookLogin: true,
-			twitterLogin: true
+			twitterLogin: false
 		},
 		user: {
 			hasAddress: false,

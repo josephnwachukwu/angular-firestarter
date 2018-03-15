@@ -9,11 +9,11 @@
   </div>
   
 
-    <button *ngIf="false" (click)="signInWithTwitter()" class="button  btn-social btn-twitter" disabled>
+    <button *ngIf="appConfig.config.authSettings.twitterLogin" (click)="signInWithTwitter()" class="button  btn-social btn-twitter" disabled>
       <i class="fa fa-twitter fa-lg"></i> Connect Twitter
     </button>
 
-    <button *ngIf="false" (click)="signInWithGithub()" class="button btn-social btn-github" disabled>
+    <button *ngIf="appConfig.config.authSettings.gitHubLogin" (click)="signInWithGithub()" class="button btn-social btn-github" disabled>
       <i class="fa fa-github fa-lg"></i> Connect GitHub
     </button> 
 

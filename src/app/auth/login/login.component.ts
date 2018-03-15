@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AuthService } from '../auth.service';
+import { AppConfigService } from '../../app.config'
 
 @Component({
   selector: 'login',
@@ -11,8 +12,9 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-  constructor(public auth: AuthService,
-              private router: Router) { }
+  constructor(public auth: AuthService,  private router: Router, public appConfig: AppConfigService) {
+
+  }
 
   /// Social Login
 

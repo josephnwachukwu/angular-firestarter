@@ -30,17 +30,18 @@
 
     <div *ngIf="userForm.valid" class="notification is-success">Form is valid</div>
     <button type="submit" class="button is-info is-medium block" [disabled]="!userForm.valid">Login</button>
+
     <p class="centered">New User? <a routerLink="/register">Click Here</a></p>
     <hr>
     <h5 class="title is-5 centered">Connect With Your Social Network</h5>
     <div class="columns">
       <div class="column is-6" >
-        <button (click)="signInWithGoogle()" class="button btn-social btn-google is-medium block">
+        <button (click)="signInWithGoogle()" class="button btn-social btn-google is-medium block" *ngIf="appConfig.config.authSettings.googleLogin">
           <i class="fa fa-google fa-lg"></i>Login Google
         </button>
       </div>
       <div class="column is-6">
-        <button (click)="signInWithFacebook()" class="button btn-social btn-facebook is-medium block">
+        <button (click)="signInWithFacebook()" class="button btn-social btn-facebook is-medium block" *ngIf="appConfig.config.authSettings.facebookLogin">
           <i class="fa fa-facebook fa-lg"></i>Login Facebook
         </button>
       </div>
