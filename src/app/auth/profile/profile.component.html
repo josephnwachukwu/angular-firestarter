@@ -1,4 +1,4 @@
-<div class="box" >
+<div class="section" >
   <div *ngIf="auth.user | async; then authenticated else guest">
           <!-- template will replace this div -->
   </div>
@@ -14,7 +14,12 @@
 <!-- User logged in -->
 <ng-template #authenticated>
   <div *ngIf="auth.user | async as user">
-    <h3>Howdy, {{ user.displayName }}</h3>
+    <div class="columns">
+      <div class="column is-12">
+        <h3 class="title is-3">Hello, {{ user.displayName }}</h3>
+      </div>
+    </div>
+    
     <img class="card-img-top" [src]="user.photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
     <p class="text-truncate">UID: {{ user.uid }}</p>
     <button class="button" (click)="logout()">Logout</button>

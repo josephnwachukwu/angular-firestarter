@@ -17,6 +17,11 @@ export class AppConfigService {
 			facebookLogin: true,
 			twitterLogin: true
 		},
+		user: {
+			hasAddress: false,
+			hasBillingInfo: false,
+			hasSocialInfo: false,
+		}
 	}
 	
 
