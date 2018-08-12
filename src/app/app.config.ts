@@ -21,7 +21,10 @@ export class AppConfigService {
 			hasAddress: false,
 			hasBillingInfo: false,
 			hasSocialInfo: false,
-		}
+		},
+		videoHeroEnabled: true,
+		footerEnabled: true,
+		
 	}
 	
 

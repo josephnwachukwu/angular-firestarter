@@ -13,8 +13,8 @@ import { AuthModule } from './auth/auth.module';
 import { SharedModule } from './shared/shared.module';
 
 // Feature Modules
-import { ItemModule } from './items/shared/item.module';
-import { UploadModule } from './uploads/shared/upload.module';
+//import { ItemModule } from './items/shared/item.module';
+import { UploadsModule } from './uploads/uploads.module';
 import { UiModule } from './ui/shared/ui.module';
 import { NotesModule } from './notes/notes.module';
 
@@ -38,7 +38,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     AppRoutingModule,
     AuthModule,
     SharedModule,
-    ItemModule,
+    UploadsModule,
+    //ItemModule,
     UiModule,
     NotesModule,
     ThemeModule,

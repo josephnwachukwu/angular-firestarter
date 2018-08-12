@@ -4,7 +4,7 @@ import { NoteService } from '../note.service';
 
 import { Note } from '../note-model';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'notes-list',
@@ -16,15 +16,15 @@ export class NotesListComponent implements OnInit {
   notes: Observable<Note[]>;
   content: string;
 
-  constructor(private noteService: NoteService) { }
+  constructor(private notesService: NoteService) { }
 
   ngOnInit() {
     // this.notes = this.noteService.getData()
-    this.notes = this.noteService.getSnapshot();
+    this.notes = this.notesService.getData();
   }
 
   createNote() {
-    this.noteService.create(this.content);
+    this.notesService.create(this.content);
     this.content = '';
   }
 

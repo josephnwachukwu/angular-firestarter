@@ -16,3 +16,11 @@
 html, body {
 	min-height: 100vh;
 }
+
+body {
+	scroll-snap-type: mandatory;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-behaviour: smooth;
+    overflow: scroll;
+    height: 100vh;
+}

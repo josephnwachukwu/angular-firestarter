@@ -4,7 +4,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 
 import { Note } from './note-model';
 
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 interface NewNote {
@@ -23,18 +23,30 @@ export class NoteService {
     this.notesCollection = this.afs.collection('notes', (ref) => ref.orderBy('time', 'desc').limit(5));
   }
 
-  getData(): Observable<Note[]> {
-    return this.notesCollection.valueChanges();
-  }
+  // getData(): Observable<Note[]> {
+  //   return this.notesCollection.valueChanges();
+  // }
 
-  getSnapshot(): Observable<Note[]> {
+  // getSnapshot(): Observable<Note[]> {
+  //   // ['added', 'modified', 'removed']
+  //   return this.notesCollection.snapshotChanges().map((actions) => {
+  //     return actions.map((a) => {
+  //       const data = a.payload.doc.data() as Note;
+  //       return { id: a.payload.doc.id, content: data.content, hearts: data.hearts, time: data.time };
+  //     });
+  //   });
+  // }
+
+  getData(): Observable<any[]> {
     // ['added', 'modified', 'removed']
-    return this.notesCollection.snapshotChanges().map((actions) => {
-      return actions.map((a) => {
-        const data = a.payload.doc.data() as Note;
-        return { id: a.payload.doc.id, content: data.content, hearts: data.hearts, time: data.time };
-      });
-    });
+    return this.notesCollection.snapshotChanges().pipe(
+      map((actions) => {
+        return actions.map((a) => {
+          const data = a.payload.doc.data();
+          return { id: a.payload.doc.id, ...data };
+        });
+      })
+    );
   }
 
   getNote(id: string) {
