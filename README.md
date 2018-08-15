@@ -1,6 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
-[![Build Status](https://travis-ci.org/josephnwachukwu/Re-Start_React_Starter.svg?branch=master)](https://travis-ci.org/josephnwachukwu/Re-Start_React_Starter)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) [![Build Status](https://travis-ci.org/josephnwachukwu/angular-matchstick.svg?branch=master)](https://travis-ci.org/josephnwachukwu/angular-matchstick)
 
 # MatchStick - Angular + Firebase Progressive Web App Based on Angular-firestarter
 
